@@ -1,0 +1,35 @@
+/* *{
+    border: 2px solid gray;
+} */
+
+/* .navigate p{
+    float:left;
+}
+
+.navigate a{
+    float:right;
+} */
+
+.navigate ul{
+    float: right;
+}
+
+.app-name{
+    margin-left: 10px;
+}
+
+header{
+    border-bottom: 2px solid gray;
+}
+
+main{
+    text-align: center;
+}
+
+.links{
+    margin-top:30px;
+}
+
+.contents{
+    margin-top: 20px;
+}
