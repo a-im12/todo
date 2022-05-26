@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href={% static 'css/style.css' %}>
+        <title>{% block title %}{% endblock %}</title>
+    </head>
+    <body>
+        <header>
+            <div class="header">
+                <div class="navigate">
+                    <p class="app-name">ToDo</p>
+                    {% block navigate %}{% endblock %}
+                    <ul>
+                        <!-- <li><a class="logout-link" href="">LogOut</a></li> -->
+                    </ul>
+                </div>
+            </div>
+        </header>
+        <main>
+            <div class="contents">
+                {% block contents %}{% endblock %}
+            </div>
+        </main>
+    </body>
+</html>
