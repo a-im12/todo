@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>ログアウト</title>
+        <link rel="stylesheet" href={% static 'css/style.css' %}>
+    </head>
+    <body>
+        <header>
+            <div class="header">
+                <div class="navigate">
+                    <p class="app-name">ToDo</p>
+                </div>
+            </div>
+        </header>
+        <main style="text-align: center;">
+            <h1>ログアウトしました</h1>
+            <a href="{% url 'top:index' %}">Back To Top</a>
+        </main>
+    </body>
+</html>

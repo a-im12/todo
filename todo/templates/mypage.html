@@ -2,6 +2,11 @@
 
     {% block title %}My Page{% endblock %}
 
+    {% block navigate %}
+    <a href="{% url 'todo:post' %}" style="float:right;">投稿</a>
+    <a href="{% url 'acounts:logout' %}" style="float:right;">ログアウト</a>
+    {% endblock %}
+
     {% block contents %}
     <h1>こんにちは</h1>
     {% endblock %}

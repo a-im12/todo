@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block title %}投稿{% endblock %}
+
+    {% block contents %}
+        <form method="post" enctype="multipart/form-data" sytle="text-align:center;">
+            {% csrf_token %}
+            <table>
+                <tr>
+                    <th>ToDo</th>
+                    <td>{{form.todo}}</td>
+                </tr>
+            </table>
+            <button type="submit">投稿する</button>
+        </form>
+    {% endblock %}

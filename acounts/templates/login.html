@@ -1,0 +1,61 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>ログイン</title>
+        <link rel="stylesheet" href={% static "css/style.css" %}>
+    </head>
+    <body>
+        <header>
+            <div class="header">
+                <div class="navigate">
+                    <p class="app-name">ToDo</p>
+                </div>
+            </div>
+        </header>
+        <main>
+            <div class="contents">
+                {% if form.errors %}
+                <p style="color:red">ユーザ名とパスワードが一致しません</p>
+                {% endif %}
+
+                <form method="post">
+                    {% csrf_token %}
+                    <label for="Username" style="display:none">
+                        User name
+                    </label>
+                    <input type="text"
+                            name="username"
+                            id="id_username"
+                            maxlength="150"
+                            autocapitalize="none"
+                            autocomplete="username"
+                            placeholder="ユーザ名"
+                            required autofocus>
+                    <label for="Password" style="display:none">
+                        Password
+                    </label>
+                    <br>
+                    <input type="password"
+                            name="password"
+                            id="id_password"
+                            autocomplete="current-password"
+                            placeholder="パスワード"
+                            required>
+                    <br>
+                    <br>
+                    <input type="submit" value="ログイン">
+                    <br>
+                    <br>
+                    <br>
+                    <a href="">パスワードを忘れましたか?</a>
+
+                    <input type="hidden"
+                            name="next"
+                            value="{% url 'todo:mypage' %}">
+                </form>
+            </div>
+        </main>
+    </body>
+</html>
