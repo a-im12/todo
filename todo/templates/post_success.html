@@ -1,3 +1,10 @@
 {% extends 'base.html' %}
 {% block title %}投稿完了{% endblock %}
-    {% block contents %}<h2>投稿完了</h2>{% endblock %}
+    {% block contents %}
+        <div style="text-align:center;">
+            <h2>投稿完了</h2>
+            <br>
+            <br>
+            <a href="{% url 'todo:mypage' %}">マイページへ</a>
+        </div>
+    {% endblock %}

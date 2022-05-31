@@ -26,14 +26,20 @@ header{
     border-bottom: 2px solid gray;
 }
 
-main{
-    text-align: center;
-}
-
 .links{
     margin-top:30px;
 }
 
 .contents{
     margin-top: 20px;
+    text-align: center;
+}
+
+main{
+    text-align: center;
+}
+
+.todo-list{
+    border:2px solid gray;
+    margin-top:10px;
 }

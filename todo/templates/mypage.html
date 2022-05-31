@@ -8,5 +8,22 @@
     {% endblock %}
 
     {% block contents %}
-    <h1>こんにちは</h1>
+    {% if user.is_authenticated %}
+        <div>
+            <h4>{{ user.username }}さんのToDoリスト</h4>
+            {% if object_list.count == 0 %}
+                <p>{{ user.username }}さんのやることはありません</p>
+            {% else %}
+                <p>投稿<strong>{{ object_list.count }}</strong>件</p>
+            {% endif %}
+        </div>
+    {% endif %}
+
+    {% for record in object_list %}
+        <div class="todo-list">
+            {{record.posted_at}}
+            <br>
+            {{record.todo}}
+        </div>
+    {% endfor %}
     {% endblock %}
