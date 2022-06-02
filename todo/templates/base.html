@@ -10,7 +10,7 @@
         <header>
             <div class="header">
                 <div class="navigate">
-                    ToDo
+                    <strong class="app-name">ToDo</strong>
                     {% block navigate %}{% endblock %}
                 </div>
             </div>
@@ -25,7 +25,7 @@
         <main>
             <div class="contents">
                 <h1>ログインしてください</h1>
-                <a href="">Topに戻る</a>
+                <a href="{% url 'top:index' %}">Topに戻る</a>
             </div>
         </main>
         {% endif %}

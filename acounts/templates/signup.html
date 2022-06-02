@@ -3,31 +3,31 @@
 {% block title %}サインイン{% endblock %}
 
     {% block contents %}
-    <h1>サインイン</h1>
-    <form method="post">
-        {% csrf_token %}
-        {% for field in form %}
-        <p>
-            {{field.label_tag}}<br>
-            {{field}}
-            <br>
-            {% if field.help_text %}
-                <small style="color:gray;">{{field.help_text}}</small>
-            {% endif %}
-            {% for error in field.errors %}
-                <smaill style="color:red;">{{error}}</smaill>
+    <div class="signup-form">
+        <h1>サインイン</h1>
+        <form method="post">
+            {% csrf_token %}
+            {% for field in form %}
+            <p>
+                {{field.label_tag}}<br>
+                {{field}}
+                <br>
+                {% if field.help_text %}
+                    <small style="color:gray;">{{field.help_text}}</small>
+                {% endif %}
+                {% for error in field.errors %}
+                    <smaill style="color:red;">{{error}}</smaill>
+                {% endfor %}
+            </p>
             {% endfor %}
-        </p>
-        {% endfor %}
 
-        <p style="color:red">
-            メールアドレスはパスワードをリセットする際に必要になりますので、登録しておくことをお勧めします。
-        </p>
-        <input type="submit" value="signup">
-    </form>
-    <br>
-    <br>
-    <a href="{% url 'top:index' %}">トップに戻る
-
-    </a>
+            <p style="color:red">
+                メールアドレスはパスワードをリセットする際に必要になりますので、登録しておくことをお勧めします。
+            </p>
+            <input type="submit" value="signup">
+        </form>
+        <br>
+        <br>
+        <a href="{% url 'top:index' %}">トップに戻る</a>
+    </div>
     {% endblock %}

@@ -3,12 +3,11 @@
     {% block title %}My Page{% endblock %}
 
     {% block navigate %}
-    <a href="{% url 'todo:post' %}" style="float:right;">投稿</a>
-    <a href="{% url 'acounts:logout' %}" style="float:right;">ログアウト</a>
+    <a class="post-link" href="{% url 'todo:post' %}" style="float:right;">投稿</a>
+    <a class="logout-link" href="{% url 'acounts:logout' %}" style="float:right;">ログアウト</a>
     {% endblock %}
 
     {% block contents %}
-    {% if user.is_authenticated %}
         <div>
             <h4>{{ user.username }}さんのToDoリスト</h4>
             {% if object_list.count == 0 %}
@@ -17,13 +16,12 @@
                 <p>投稿<strong>{{ object_list.count }}</strong>件</p>
             {% endif %}
         </div>
-    {% endif %}
 
-    {% for record in object_list %}
-        <div class="todo-list">
-            {{record.posted_at}}
-            <br>
-            {{record.todo}}
-        </div>
-    {% endfor %}
+        {% for record in object_list %}
+            <div class="todo-list">
+                {{record.posted_at}}
+                <br>
+                {{record.todo}}
+            </div>
+        {% endfor %}
     {% endblock %}
